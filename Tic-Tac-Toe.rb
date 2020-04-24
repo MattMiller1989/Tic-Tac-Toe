@@ -1,15 +1,14 @@
 
 class Game_board
-
-    def initialize()
-        
+        attr_accessor :curr_board
+      
+    def create_board
         @curr_board=[[" "," "," "],
                     ["-","-","-"],
                     [" "," "," "],
                     ["-","-","-"],
                     [" "," "," "]]
-    end    
-    
+    end
     def update_board(symbol,choice)
         
         @curr_board[choice[0]*2][choice[1]]=symbol
@@ -75,6 +74,7 @@ class Game_runner
     
     def initialize
         @my_board=Game_board.new
+        @my_board.create_board
         startgame
     end
     def startgame
@@ -166,4 +166,4 @@ class Game_runner
 
 end
 
-my_runner=Game_runner.new
+# my_runner=Game_runner.new
